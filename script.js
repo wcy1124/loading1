@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Pixel data at coin center:', pixel);
 
                 // pixel[3] 是 alpha 通道值，表示透明度
-                const isOverColoredArea = pixel[3] !== 0; // 如果透明度不為 0，說明該像素是有颜色的
+                const isOverColoredArea = pixel[3] > 0 || (pixel[0] !== 0 || pixel[1] !== 0 || pixel[2] !== 0); // 如果透明度不為 0，說明該像素是有颜色的
                 console.log('Is coin over a colored area:', isOverColoredArea);
 
                 if (isOverColoredArea) {
