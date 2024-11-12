@@ -1,0 +1,123 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    z-index: 1;
+}
+.machine-all{
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    animation: zoomIn 1s ease-in-out forwards;
+}
+.machine,.coin,.slot{
+    position: absolute;
+    max-width: 50%;
+    max-height: 50%;
+    height: auto;
+    width: auto;/* 讓寬度和高度根據內容自動調整 */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    user-select: none;
+    pointer-events: none;
+}
+.put{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 20%;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 5;
+}
+.put>div{
+    position: relative;
+    display: flex;
+    height: 30%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.game-coin{
+    position: absolute;
+    max-width: 40%;
+    max-height: 40%;
+    height: auto;
+    width: auto;
+    cursor: grab;
+}
+.point{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    height: 100%;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
+}
+.point>div{
+    position: relative;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.word{
+    font-size: clamp(0.5em,2vw,1.2em);
+    font-weight: 900;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    user-select: none;
+}
+.figer{
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    animation: move 1.2s ease-in-out infinite;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    user-select: none;
+    pointer-events: none;
+}
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1); /* 最終大小和位置 */
+    }
+}
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
