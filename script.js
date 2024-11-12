@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 創建一个 canvas
     const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    const ctx = canvas.getContext('2d');
 
     const img = new Image();
     img.crossOrigin = 'anonymous';  // 設置跨域属性
