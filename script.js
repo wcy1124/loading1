@@ -99,7 +99,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const gameCoin = document.querySelector('.game-coin');
     const container = document.querySelector('.container');
-    const slot = document.querySelector('.machine-all');
+    const slot = document.querySelector('.machine');
     const initialSrc = 'img/coin1.png';
     const grabbedSrc = 'img/coin2.png';
     let isDragging = false;
